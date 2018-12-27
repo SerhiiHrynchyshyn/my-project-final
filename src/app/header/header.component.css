@@ -1,0 +1,22 @@
+header{
+    width: 100%;
+    height: 100px;
+    background-color: #2AB27A;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    color: white;
+}
+.add-icons{
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
