@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="app-content">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item pd-li" *ngFor="let item of contactsUser">
+        <div class="list">
+          <img src="{{ item.img }}" class="imgUser" alt="">
+          <div class="content">
+            <header>
+              <h5>
+                {{ item.first }}, {{ item.last }}
+              </h5>
+            </header>
+            <main>
+              <div class="detalis">
+                <i class="material-icons icon-text">
+                  email
+                </i>
+                {{ item.mail }}
+              </div>
+              <div class="detalis">
+                <i class="material-icons icon-text">
+                  phone
+                </i>
+                {{ item.phone }}
+              </div>
+            </main>
+          </div>
+          <div class="delete-user">
+            <button type="button" class="btn btn-outline-success" (click)="onDeleteUser(item)">
+              <i class="material-icons">
+                delete_forever
+              </i>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

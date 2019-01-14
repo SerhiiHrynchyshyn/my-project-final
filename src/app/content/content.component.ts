@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUsers } from '../shared/interfaces';
 
 @Component({
   selector: 'app-content',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  contacts: Array<IUsers>;
+  public contacts: Array<IUsers>;
+
+  public title: string;
 
   constructor() { 
     this.contacts = _listUser;
@@ -15,15 +18,15 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  public isDeleteUser(item: IUsers): void{
+    const index = this.contacts.indexOf(item);
 
+    if(index > -1){
+      this.contacts.splice(index, 1);
+    }
+  }
 }
-interface IUsers{
-  img: string;
-  first: string;
-  last: string;
-  mail: string;
-  phone: number;
-}
+
 
 const _listUser: Array<IUsers> = [
   <IUsers>{

@@ -1,42 +1,12 @@
 <section>
   <div class="container">
+
     <form action="" class="form-search" name="form-search">
-      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control" type="text" placeholder="Search">
     </form>
-    <div class="app-content">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item pd-li" *ngFor="let item of contacts">
-          <header>
-            <img src="{{ item.img }}" class="imgUser" alt="">
-            <div class="contant-users">
-              <h5>
-                {{ item.first }}, {{ item.last }}
-              </h5>
-              <div class="content">
-                <div class="contact">
-                  <i class="material-icons icon-text">
-                    email
-                  </i>
-                  {{ item.mail }}
-                </div>
-                <div class="content">
-                  <i class="material-icons icon-text">
-                    phone
-                  </i>
-                  {{ item.phone }}
-                </div>
-              </div>
-            </div>
-          </header>
 
+    <app-contacts [contactsUser]="contacts" 
+                  (delete)="isDeleteUser($event)"></app-contacts>
 
-
-
-          <div class="detalis">
-          </div>
-
-        </li>
-      </ul>
-    </div>
   </div>
 </section>
