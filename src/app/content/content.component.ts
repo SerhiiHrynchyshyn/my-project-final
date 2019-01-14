@@ -8,8 +8,7 @@ import { IUsers } from '../shared/interfaces';
 })
 export class ContentComponent implements OnInit {
   public contacts: Array<IUsers>;
-
-  public title: string;
+  public search: string;
 
   constructor() { 
     this.contacts = _listUser;

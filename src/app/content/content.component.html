@@ -2,11 +2,16 @@
   <div class="container">
 
     <form action="" class="form-search" name="form-search">
-      <input class="form-control" type="text" placeholder="Search">
+      <input  class="form-control" 
+              type="text"
+              name="serach"
+              placeholder="Search..."
+              [(ngModel)]="search">
     </form>
 
-    <app-contacts [contactsUser]="contacts" 
-                  (delete)="isDeleteUser($event)"></app-contacts>
+    <app-contacts [contactsUser]="contacts | filterBySearch:search"
+                  (delete)="isDeleteUser($event)">
+    </app-contacts>
 
   </div>
 </section>
