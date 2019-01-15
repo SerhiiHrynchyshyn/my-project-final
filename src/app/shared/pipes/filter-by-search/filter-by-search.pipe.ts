@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterBySearchPipe implements PipeTransform {
 
   transform(value: any, search?: string): any {
-    console.log(value, search);
+    // console.log(value, search);
     if(!search) { return value };
     
     return value.filter(el => {

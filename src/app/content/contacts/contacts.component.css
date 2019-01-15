@@ -36,9 +36,9 @@ header {
 }
 
 main {
-  width: 100%;
+  max-width: 400px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -51,4 +51,7 @@ main {
 
 .icon-text {
   margin-right: 10px;
+}
+.create-user{
+  margin: 10px;
 }

@@ -16,15 +16,14 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   public isDeleteUser(item: IUsers): void{
     const index = this.contacts.indexOf(item);
 
     if(index > -1){
       this.contacts.splice(index, 1);
     }
-  }
-}
+  }}
 
 
 const _listUser: Array<IUsers> = [

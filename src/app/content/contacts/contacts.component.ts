@@ -8,9 +8,7 @@ import { IUsers } from 'src/app/shared/interfaces';
 })
 export class ContactsComponent implements OnInit {
   @Input() contactsUser: Array<IUsers>;
-
   @Output() delete: EventEmitter<IUsers> = new EventEmitter(); 
-
 
   constructor() { }
 
