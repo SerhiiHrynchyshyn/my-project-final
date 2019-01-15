@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, NgModel } from '@angular/forms'
 
 import { ModalModule } from 'ngx-bootstrap';
 
@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { FilterBySearchPipe } from './shared/pipes';
 import { ContactsComponent } from './content/contacts/contacts.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactsComponent } from './content/contacts/contacts.component';
     HeaderComponent,
     ContentComponent,
     FilterBySearchPipe,
-    ContactsComponent
+    ContactsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

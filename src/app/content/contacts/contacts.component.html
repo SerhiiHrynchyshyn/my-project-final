@@ -35,6 +35,7 @@
           </div>
           <div class="create-user">
             <button type="button" 
+                    (click)="onEdit(editModal)"  
                     class="btn btn-outline-success">
               <i class="material-icons">
                 create
@@ -56,3 +57,7 @@
     </ul>
   </div>
 </div>
+
+<ng-template #editModal>
+  <app-edit [edit]="true" [users]="contactsUser"></app-edit>
+</ng-template>
