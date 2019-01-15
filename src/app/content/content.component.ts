@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUsers } from '../shared/interfaces';
 
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -10,20 +11,23 @@ export class ContentComponent implements OnInit {
   public contacts: Array<IUsers>;
   public search: string;
 
-  constructor() { 
-    this.contacts = _listUser;
-  }
+  
 
-  ngOnInit() {
+  constructor() {
+    this.contacts = _listUser
   }
   
-  public isDeleteUser(item: IUsers): void{
-    const index = this.contacts.indexOf(item);
+  ngOnInit() {
+  }
 
-    if(index > -1){
+  public isDeleteUser(item: IUsers): void {
+    const index = this.contacts.indexOf(item);
+    if (index > -1) {
       this.contacts.splice(index, 1);
     }
-  }}
+  }
+  
+}
 
 
 const _listUser: Array<IUsers> = [
@@ -40,7 +44,7 @@ const _listUser: Array<IUsers> = [
     last: "Smith",
     mail: 'phillip.wade@example.com',
     phone: +30615359154
-    
+
   },
   <IUsers>{
     img: "https://randomuser.me/api/portraits/med/women/68.jpg",
