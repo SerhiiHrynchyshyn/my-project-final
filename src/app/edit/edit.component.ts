@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+
+
 
 @Component({
   selector: 'app-edit',
@@ -6,16 +9,39 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  
+  @ViewChild('userModal') userModal;
 
-  @Input() edit;
+  private modalRef: BsModalRef;
+
+
   @Input() users;
-  constructor() { }
+  @Input() edit;
+
+  // @Output() closeModal = new EventEmitter();
+
+  constructor(
+    private modalService: BsModalService
+
+   ) { }
 
   ngOnInit() {
     console.log(this.users);
-
+    console.log(this.edit);
   }
+
+
+
+openModal(template) {
+  // console.log('openModal')
+  this.modalRef = this.modalService.show(this.userModal);
+}
+
+closeModal(){
+  // console.log('header close')
+  // this.modalRef.hide();
+}
+
+
 
 
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EditComponent } from '../edit/edit.component';
+// import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 
 @Component({
@@ -8,19 +9,22 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild(EditComponent) edit: EditComponent;
 
-  private modalRef: BsModalRef;
+  // private modalRef: BsModalRef;
 
-  constructor(
-    private modalService: BsModalService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   openModal(template) {
-    this.modalRef = this.modalService.show(template);
+    this.edit.openModal(null);
   }
 
+  // closeModal(){
+  //   console.log('header close')
+  //   // this.modalRef.hide();
+  // }
 
 }

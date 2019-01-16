@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { IUsers } from 'src/app/shared/interfaces';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 
@@ -8,6 +8,10 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
+
+
+
+
   modalRef: BsModalRef;
 
   @Input() contactsUser: Array<IUsers>;
