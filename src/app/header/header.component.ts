@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  openModal(template) {
+  openModal() {
     this.edit.openModal(null);
   }
 

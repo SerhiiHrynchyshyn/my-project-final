@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { IUsers } from '../shared/interfaces';
 
 
 
@@ -9,6 +10,9 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+  user = {
+    first: ''
+  };
   @ViewChild('userModal') userModal;
 
   private modalRef: BsModalRef;
@@ -31,7 +35,8 @@ export class EditComponent implements OnInit {
 
 
 
-openModal(template) {
+openModal(user) {
+  this.user.first = user.first;
   // console.log('openModal')
   this.modalRef = this.modalService.show(this.userModal);
 }
