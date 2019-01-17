@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { IUsers } from 'src/app/shared/interfaces';
-// import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { EditComponent } from 'src/app/edit/edit.component';
 
 @Component({
@@ -11,16 +10,10 @@ import { EditComponent } from 'src/app/edit/edit.component';
 export class ContactsComponent implements OnInit {
   @ViewChild(EditComponent) edit: EditComponent;
 
-
-
-  // modalRef: BsModalRef;
-
   @Input() contactsUser: Array<IUsers>;
   @Output() delete: EventEmitter<IUsers> = new EventEmitter();
 
-  constructor(
-    // private modalService: BsModalService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -33,7 +26,6 @@ export class ContactsComponent implements OnInit {
 
   onEdit(user) {
     console.log(user);
-    // this.modalRef = this.modalService.show(template);
     this.edit.openModal(user);
   }
 

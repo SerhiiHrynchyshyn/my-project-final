@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
-import { IUsers } from '../shared/interfaces';
 
 
 
@@ -10,23 +9,27 @@ import { IUsers } from '../shared/interfaces';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  user = {
-    first: ''
-  };
+  // user = {
+  //   first: ''
+  // };
+
   @ViewChild('userModal') userModal;
 
   private modalRef: BsModalRef;
-
-
   @Input() users;
   @Input() edit;
 
-  // @Output() closeModal = new EventEmitter();
+  public first: string;
+  public last: string;
+  public email: string;
+  public phone: number;
+
+
 
   constructor(
     private modalService: BsModalService
 
-   ) { }
+  ) { }
 
   ngOnInit() {
     console.log(this.users);
@@ -35,16 +38,15 @@ export class EditComponent implements OnInit {
 
 
 
-openModal(user) {
-  this.user.first = user.first;
-  // console.log('openModal')
-  this.modalRef = this.modalService.show(this.userModal);
-}
+  openModal(edit) {
+    // this.user.first = user.first;
+    this.modalRef = this.modalService.show(this.userModal);
+  }
 
-closeModal(){
-  // console.log('header close')
-  // this.modalRef.hide();
-}
+  public onSubmit() {
+    console.log(this.first, this.last, this.email, this.phone);
+  }
+
 
 
 
